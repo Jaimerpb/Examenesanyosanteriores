@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 """
-This Python module contains not only the class Covid, but also the test of
-this Python class.
+This Python method contains the application of the Game.
 
-@contents :  This module contains not only a single Python class, but also the
-             test cases to probe its functionality.
+@contents :  This module contains the complete implementation of the application
+             of the Game.
 @project :  N/A
 @program :  N/A
-@file :  pokemon.py
+@file :  main.py
 @author :  Antonio Artes Garcia (antonio.artesgarcia@ceu.es)
            Francisco Hernando Gallego (francisco.hernandogallego@ceu.es)
            Ruben Juarez Cadiz (ruben.juarezcadiz@ceu.es)
@@ -30,132 +28,500 @@ this Python class.
               prohibited without the written consent of the copyright owner.
 """
 
-# Source packages.
 
-class Omicron():
-  """Python class to implement the basic version of Covid.
+class Persona(): 
+    # Variables globales
 
-  This Python class implements the basic version of Covid.
+    # Constructor
+    def __init__(self, persona_dni, nombre, hospital_input, edad):
+        """Constructor of the class.
+        This special method is executed when an object of this class is
+        created.
 
-  Syntax
-  ------
-    obj = Covid(covid_name)
+        Syntax
+        ------
+            [ ] = __init__(self, persona_dni, nombre, hospital_input, edad)
 
-  Parameters
-  ----------
-    [in] covid_name Name of the Covid.
+        Parameters
+        ----------
+            [in] self Python object that represents an instance of the
+                    class Persona.
+            [in] persona_dni DNI de la persona.
+            [in] nombre nombre de la persona.
+            [in] hospital_input Estado hospitalario de la persona.
+            [in] edad edad de la persona.
+
+        Returns
+        -------
+            obj Python object output parameter that represents an instance
+                of the class Persona.
+
+        Exceptions
+        ----------
+            TypeError:
+            If the parameter persona_dni is NOT a String.
+            If the parameter nombre is NOT a String.
+            If the parameter hospital_input is NOT a enum EstadoHospitalario.
+            If the parameter edad is NOT be an int.
+
+            ValueError:
+            If the parameter dni no tiene 9 dígitos.
+            If the parameter dni  ya está en la lista.
+
+        Example
+        -------
+            >>> from SerVivo import SerVivo
+            >>> from EstadoHospitalario import EstadoHospitalario
+            >>> from Covid import Covid
+            >>> from persona import Persona
+            >>> persona1 = Persona("12345678E","Francisco Hernando",EstadoHospitalario.PLANTA, 31)
+        """
+
+    def get_CargaViral(self):
+        """Method to get the attribute cargaViral of the object.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.get_CargaViral( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String The value of the specific attribute.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.get_CargaViral( )
+        """
+    
+    def get_dni(self):
+        """Method to get the attribute dni of the object.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.get_dni( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String The value of the specific attribute.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.get_dni( )
+        """
+
+    @staticmethod
+    def get_max_edad():
+        """Method to get the attribute edad máxima of the object.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.get_max_edad( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String The value of the specific attribute.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.get_CargaViral( )
+        """
+
+    def get_list_dnis():
+        """Method to get la lista de dnis of the object.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.get_list_dnis( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String The value of the specific attribute.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.get_list_dnis( )
+        """
+
+    def get_max_dosis():
+        """Method to get número máximo de dosis of the object.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.get_max_dosis( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String The value of the specific attribute.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.get_max_dosis( )
+        """
+
+    def set_CargaViral(self, nuevaCargaViral):
+        """Method to set the attribute cargaviral of the object.
+
+        Method to set the attribute attack_rating based on a human-readable
+        format of the object that is formed in this class.
+
+        Syntax
+        ------
+          [ ] = obj_Persona.set_CargaViral( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+          [in] attack_rating_to_be_set String that contains the attack rating
+                                       to assign to the Persona.
+
+        Returns
+        -------
+
+        Exceptions
+        ----------
+          TypeError If the parameter attack_rating_to_be_set is NOT a int.
+          ValueError If the parameter attack_rating_to_be_set is NOT > 0 and <= 10.
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.set_CargaViral(8)
+        """
+
+    def eliminarUsuario(self):
+        """Esta función elimina de la lista  el dni de la persona eliminada.
+
+        Syntax
+        ------
+          [ ] = eliminarUsuario(self)
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.eliminarUsuario( )
+        """
+
+    def __str__(self):
+        """Method to present a human-readable format of the object.
+
+        Method to present a human-readable format of the object that is formed
+        in this class. This method is useful for logging or displaying some
+        information about the object.
+
+        Syntax
+        ------
+          [ ] = __str__( )
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Returns
+        -------
+          String Human-readable format of the object.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.__str__( )
+        """
 
 
-  Returns
-  -------
-    obj Python object output parameter that represents an instance
-        of the class Covid.
+    def dosis_vacuna(self):
+        """Esta función añade una carda de vacuna a una persona si no
+         supera el máximo de vacunas.
+        Returns
+        -------
+        Devuelve 1 si se ha vacunado correctamente.
+        Devuelve -1 si no ha sido posible vacunarse.
 
-  Attributes
-  ----------
+        Syntax
+        ------
+          [ ] = dosis_vacuna(self)
 
-  Example
-  -------
-    >>> from Covid import Covid
-    >>> obj_Covid = Covid("covid-19")
-  """
-  def __init__(self, covid_name):
-    """Python class to implement the basic version of Covid.
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
 
-    This Python class implements the basic version of Covid.
+        Exceptions
+        ----------
 
-    Syntax
-    ------
-        obj = Covid(covid_name)
-
-    Parameters
-    ----------
-        [in] covid_name Name of the Covid.
-
-
-    Returns
-    -------
-        obj Python object output parameter that represents an instance
-            of the class Omicron.
-
-    Attributes
-    ----------
-
-    Example
-    -------
-        >>> from Omicron import Omicron
-        >>> obj_Omicron = Omicron("covid-19")
-    """
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.dosis_vacuna( )
+        """
 
 
-  def get_max_impacto():
-    print("")
+    def infectado(self, Covid):
+        """Esta función gestiona la carga viral de una persona que ha sido
+        infectada por la c lase Covid.
+        Returns
+        -------
+        Devuelve la carga viral de la persona.
+        Devuelve -1 si el usuario fallece y lo elimina de la lista.
+
+        Syntax
+        ------
+          [ ] = infectado(self, Covid)
+
+        Parameters
+        ----------
+          [in] self Python object that represents an instance of the
+                    class Persona.
+
+        Exceptions
+        ----------
+
+        Example
+        -------
+          >>> from Persona import Persona
+          >>> obj_Persona = Persona()
+          >>> obj_Persona.infectado(Covid)
+        """
 
 
 def main():
-  """Function main of the module.
-
-  The function main of this module is used to test the Class that is described
-  in this module.
-
-  Syntax
-  ------
-    [ ] = main()
-
-  Parameters
-  ----------
-    Null .
-
-  Returns
-  -------
-    Null .
-
-  Example
-  -------
-    >>> main()
-  """
-  print("=======================================================.")
-  print(">Test Case 1: Create a Omicron.")
-  print("=======================================================.")
-  try:
-    covid1 = Omicron("covid-19")
-    covid2 = Omicron("covid-19")
-    covid3 = Omicron("covid-19")
-    covid4 = Omicron("covid-19")
-    if(covid1._impacto >=0 and covid1._impacto<=10):
-      if(covid2._impacto >=0 and covid2._impacto<=10):
-        if(covid3._impacto >=0 and covid3._impacto<=10):
-          if(covid4._impacto >=0 and covid4._impacto<=10):
-            print("OK: Test PASS. número aleatorio.")
-          else:
-            print("KO: Test FAIL. número aleatorio entre intervalo.")
-        else:
-            print("KO: Test FAIL. número aleatorio entre intervalo.")
-      else:
-          print("KO: Test FAIL. número aleatorio entre intervalo.")
-    else:
-        print("KO: Test FAIL. número aleatorio entre intervalo.")
-  except:
-    print("KO: Fallo al crear la instancia Covid.")
-
-
-  print("=======================================================.")
-  print(">Test Case 2: Máximo Impacto cambiado.")
-  print("=======================================================.")
-  try:
-    omi1 = Omicron("omicron")
+    """TESTS!
+    """
+    nota = 0
+    print("=======================================================.")
+    print(">Test Case 1: Constructor.")
+    print("=======================================================.")
     try:
-      if (Omicron.get_max_impacto() == 10):
-        print("OK: Test PASS. máximo impacto.")
-      else:
-        print("KO: Test FAIL. Máximo impacto.")
+        persona1 = Persona("12345678E","Francisco Hernando",EstadoHospitalario.PLANTA, 31)
+        print("OK: Test PASS. Constructor.")
     except:
-      print("Fallo al crear la función max impacto.")
-  except:
-    print("KO: máximo impacto cambiado.")
+        print("KO: Constructor erróneo.")
 
-# Checking whether this module is executed just itself alone.
-if __name__ == "__main__":
+    try:
+        persona2 = Persona("12345678E","Francisco Hernando",EstadoHospitalario.PLANTA, 31)
+        print("KO: Constructor erróneo en DNI, no puedes tener dos iguales.")
+    except ValueError:
+        print("OK: Test PASS. lista de dnis diferentes.")
+    except:
+        print("KO: Constructor erróneo en DNI, no puedes tener dos iguales.")
+    try:
+        persona3 = Persona("23","Elena Pérez",EstadoHospitalario.UCI, 31)
+        print("KO: Test error, revise la condición del número de caracteres del DNI.")
+    except ValueError:
+        print("OK: Test PASS. Test DNI pasa correctamente.")
+    except:
+        print("KO: Test error, revise la condición del número de caracteres del DNI.")
+        
+    try:
+        persona4 = Persona("12335678E","Elena Pérez","ugfhci", 31)
+        print("KO: Test error, revise la condición del estado EstadoHospitalario.")
+    except TypeError:
+        print("OK: Test PASS. Test EstadoHospitalario pasa correctamente.")
+    except:
+        print("KO: Test error, revise la condición del estado EstadoHospitalario.")
+    try:
+        persona5 = Persona("12325678E","Elena Pérez",EstadoHospitalario.UCI, 222)
+        print("KO: Test error, revise la condición del estado edad.")
+    except ValueError:
+        print("OK: Test PASS. Test edad pasa correctamente.")
+    except:
+        print("KO: Test error, revise la condición del estado edad.")
+    try:
+        persona5 = Persona("12325678E","Elena Pérez",EstadoHospitalario.UCI, 31)
+        if (persona5.is_vivo() == True):
+            print("OK: Test PASS. Herencia.")
+        else:
+            print("KO: Herencia.")
+    except ValueError:
+        print("OK: Test PASS. Test edad pasa correctamente.")
+    except:
+        print("KO: Herencia.")
+
+    print("=======================================================.")
+    print(">Test Case 2: gets.")
+    print("=======================================================.")
+
+    try:
+        if (Persona.get_max_edad() == 100):
+            print("OK: Test PASS. get_max_edad.")
+        else:
+            print("KO: get_max_edad.")
+        if (Persona.get_list_dnis() == ['12345678E', '12325678E']):
+            print("OK: Test PASS. get_list_dnis.")
+        else:
+            print("KO: get_list_dnis.")
+        if (Persona.get_max_dosis() == 3):
+            print("OK: Test PASS. get_max_dosis.")
+        else:
+            print("KO: get_max_dosis.")
+
+        if (persona1.get_dni() == "12345678E"):
+            print("OK: Test PASS. get_max_dosis.")
+        else:
+            print("KO: get_dni.")
+        if (persona1.get_CargaViral() == 69):
+            print("OK: Test PASS. get_CargaViral.")
+        else:
+            print("KO: get_CargaViral.")
+        persona1.set_CargaViral(120)
+        if (persona1.get_CargaViral() == 120):
+            print("OK: Test PASS. set_CargaViral.")
+        else:
+            print("KO: set_CargaViral.")
+    except:
+        print("KO: sets.")    
+    print("=======================================================.")
+    print(">Test Case 3: Delete.")
+    print("=======================================================.")
+    try:
+        persona6 = Persona("22325678E","Francisco Hernando",EstadoHospitalario.PLANTA, 31)
+    except:
+        print("KO: Constructor erróneo.")
+    try:
+        persona6.eliminarUsuario()
+        if persona6.get_dni() in Persona.get_list_dnis():
+            print("KO: Delete.")
+        else:
+            print("OK: Test PASS. Delete.")
+    except:
+        print("KO: Delete.")    
+    print("=======================================================.")
+    print(">Test Case 4: Str.")
+    print("=======================================================.")
+    try:
+        persona7 = Persona("72345678E","Pablo Herrero",EstadoHospitalario.PLANTA, 25)
+    except:
+        print("KO: Constructor erróneo.")
+
+    try:
+        AuxString = persona7.__str__( )
+        print(AuxString)
+        if AuxString == "DNI: 72345678E\nNombre: Pablo Herrero\nEdad: 25\nEstado: PLANTA\nCarga Viral: 75\nDosis: 0":
+            print("OK: Test PASS. Str.")
+        else:
+            print("KO: Str.")
+    except:
+        print("KO: Str.")
+
+    print("=======================================================.")
+    print(">Test Case 5: vacunado.")
+    print("=======================================================.")
+    try:
+        try:
+            persona8 = Persona("82325678E","Pepe Hernando",EstadoHospitalario.UCI, 55)
+        except:
+            print("KO: Constructor erróneo.")
+
+        aux1 = persona8.get_CargaViral()
+        persona8.dosis_vacuna() # 1
+        if (aux1 == (persona8.get_CargaViral()-25)):
+            print("OK: Test PASS. dosis vacuna.")
+        else:
+            print("KO: dosis vacuna.")
+        persona8.dosis_vacuna() # 2
+        aux2 = persona8.dosis_vacuna() # 3
+        aux3 = persona8.dosis_vacuna() # 4
+        if (aux3 ==-1 and aux2 != -1):
+            print("OK: Test PASS. máximo número de dosis")
+        else:
+            print("KO: máximo número de dosis")
+    except:
+        print("KO: función vacunado")
+
+
+    print("=======================================================.")
+    print(">Test Case 6: infectado.")
+    print("=======================================================.")
+    try:
+        persona9 = Persona("92325678E","Pepe Hernando",EstadoHospitalario.UCI, 55)
+    except:
+        print("KO: Constructor erróneo.")
+    try:
+        aux = 0
+        while (aux !=-1):
+            aux = persona9.infectado(Covid("covid-19"))
+        if (persona9.is_vivo() != True):
+            if (persona9.get_dni() not in Persona.get_list_dnis()):
+                print("OK: Test PASS. infectado.")
+            else:
+                print("KO: infectado.")
+        else:
+            print("KO: infectado.")
+    except:
+        print("KO: Infectado.")
+
+
+        
+
+if __name__=="__main__":
+    main()
+
+
 
 
 
